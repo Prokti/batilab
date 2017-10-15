@@ -1,0 +1,14 @@
+<html>
+
+<h1>Liste Chantiers</h1>
+
+{% for chantier in derniers_chantiers %}
+    <div class ="chantier">
+    <h3> {{ chantier.name}} - {{ chantier.id }}</h3>
+    <p><a href="{% url "chantier_detail" chantier.id %}">Voir Chantier</a></p>
+
+{% endfor %}
+
+    </div>
+
+</html>
