@@ -10,7 +10,13 @@ class Chantier(models.Model):
     description = models.TextField(null=False)
     ccmi_doc = models.FileField(upload_to='')
     appel_1_doc = models.FileField(upload_to='')
+    appel_2_doc = models.FileField(upload_to='')
+    appel_3_doc = models.FileField(upload_to='')
+    appel_4_doc = models.FileField(upload_to='')
+    appel_5_doc = models.FileField(upload_to='')
     reception_doc = models.FileField(upload_to='')
+    plans_os_doc = models.FileField(upload_to='')
+
 
     #profil = models.ForeignKey(Profil, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
