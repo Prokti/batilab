@@ -6,16 +6,17 @@ from .forms import ConnexionForm
 from django.http import HttpResponse
 
 def connexion(request):
-    error = False
+    
 
     if request.method == "POST":
         form = ConnexionForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data["username"]
-            password = form.cleaned_data["password"]
+            username = request.POST["username"]
+            password = request.POST["password"]
             user = authenticate(username=username, password=password)  # Nous vérifions si les données sont correctes
             if user:  # Si l'objet renvoyé n'est pas None
-                login(request, user)  # nous connectons l'utilisateur                
+                login(request, user)  # nous connectons l'utilisateur
+                           
             else: # sinon une erreur sera affichée
                 error = True
     else:
@@ -33,3 +34,17 @@ def dire_bonjour(request):
     if request.user.is_authenticated():
         return HttpResponse("Salut, {0} !".format(request.user.username))
     return HttpResponse("Salut, anonyme.")
+
+
+def connex(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        # Redirect to a success page.
+        
+    else:
+        # Return an 'invalid login' error message.
+        return redirect('https://berdin.immo')
+    

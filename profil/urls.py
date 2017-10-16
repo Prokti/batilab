@@ -7,6 +7,7 @@ from . import views
 urlpatterns= [
     url(r'^$', views.dire_bonjour, name='dire_bonjour'),
     url(r'^connexion$', views.connexion, name='connexion'),
-    url(r'^deconnexion$', auth_views.logout, {'next_page': 'https://berdin.immo'}),
+    url(r'^deconnexion$', views.deconnexion, name='deconnexion'),
+    url(r'^connexion2$', auth_views.login, {'template_name': 'connexion.html'})
     
 ]
