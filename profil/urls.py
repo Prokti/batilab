@@ -5,6 +5,8 @@ from . import views
 
 
 urlpatterns= [
-    url(r'^connexion$', auth_views.login, {'template_name' : 'connexion.html'}),
+    url(r'^$', views.dire_bonjour, name='dire_bonjour'),
+    url(r'^connexion$', views.connexion, name='connexion'),
     url(r'^deconnexion$', auth_views.logout, {'next_page': 'https://berdin.immo'}),
+    
 ]

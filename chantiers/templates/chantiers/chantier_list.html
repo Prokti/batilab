@@ -2,12 +2,24 @@
 
 <h1>Liste Chantiers</h1>
 
+{% if user.is_authenticated %}
+
+<p>{{user.username}}</p>
+
 {% for chantier in derniers_chantiers %}
+
+
+
+    {% if user.id == chantier.user.id %}
     <div class ="chantier">
     <h3> {{ chantier.name}} - {{ chantier.id }}</h3>
     <p><a href="{% url "chantier_detail" chantier.id %}">Voir Chantier</a></p>
+    
+    {% endif %}
 
 {% endfor %}
+
+{% endif %}
 
     </div>
 

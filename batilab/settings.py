@@ -125,3 +125,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/doc/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'doc')
 
+LOGIN_URL = '/profil/connexion'
