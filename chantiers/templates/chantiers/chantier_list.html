@@ -9,7 +9,6 @@
 {% for chantier in derniers_chantiers %}
 
 
-
     {% if user.id == chantier.user.id %}
     <div class ="chantier">
     <h3> {{ chantier.name}} - {{ chantier.id }}</h3>
