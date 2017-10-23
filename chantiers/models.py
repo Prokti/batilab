@@ -43,11 +43,26 @@ class Marche(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     marche_doc = models.FileField(upload_to='')
     devis_doc = models.FileField(upload_to='')
+
+
+
+
+
+class CalculeMaison(models.Model):
+    name = models.CharField(max_length=100)
+    longueur_ext = models.FloatField()
+    largueur_ext = models.FloatField()
+    
+    
+    def __str__(self):
+        return self.name
+
+    def cal_surface_pancher(self):
+        total = self.longueur_ext * self.largueur_ext
+        return str(total)
      
 
 
-    def __str__(self):
-        return self.name
 
 
 

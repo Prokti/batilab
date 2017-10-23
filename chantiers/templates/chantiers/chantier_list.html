@@ -1,6 +1,9 @@
 
 {% extends "base.html" %}
 
+
+{% block content %}
+
 <h1>Liste Chantiers</h1>
 
 {% if user.is_authenticated %}
@@ -22,6 +25,8 @@
 {% endif %}
 
     </div>
+
+{% endblock %}
     
 
 

@@ -49,3 +49,4 @@ def connex(request):
         # Return an 'invalid login' error message.
         return redirect('https://berdin.immo')
     
+
