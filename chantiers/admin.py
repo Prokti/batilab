@@ -21,11 +21,14 @@ class CalculeMaisonAdmin(admin.ModelAdmin):
             'classes': ['collapse',],
             'fields': ('name', 'longueur_ext', 'largueur_ext')
         }),
-   
+        ('CALCULES', {
+            
+            'fields': ('name',)
+        }),
 
     )
 
-
+    
 
     
 

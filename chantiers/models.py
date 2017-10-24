@@ -42,7 +42,7 @@ class Marche(models.Model):
     chantier = models.ForeignKey(Chantier, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     marche_doc = models.FileField(upload_to='')
-    devis_doc = models.FileField(upload_to='')
+    devis_doc = models.FileField(upload_to='') 
 
 
 
@@ -57,7 +57,7 @@ class CalculeMaison(models.Model):
     def __str__(self):
         return self.name
 
-    def cal_surface_pancher(self):
+    def cal_surface_plancher(self):
         total = self.longueur_ext * self.largueur_ext
         return str(total)
      
