@@ -1,7 +1,7 @@
 from django.db import models
 from profil.models import Profil
 from django.contrib.auth.models import User
-import os, random, test
+import os, random
 
 # Create your models here.
 
