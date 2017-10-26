@@ -1,7 +1,7 @@
 from django.db import models
 from profil.models import Profil
 from django.contrib.auth.models import User
-import os, random
+import os, random, test
 
 # Create your models here.
 
@@ -43,6 +43,7 @@ class Marche(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     marche_doc = models.FileField(upload_to='')
     devis_doc = models.FileField(upload_to='') 
+
 
 
 
