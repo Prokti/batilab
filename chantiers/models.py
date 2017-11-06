@@ -13,15 +13,16 @@ def renommage(instance, nom):
 class Chantier(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
-    description = models.TextField(null=False)
-    ccmi_doc = models.FileField(upload_to=renommage, verbose_name="CCMI")
-    appel_1_doc = models.FileField(upload_to=renommage)
-    appel_2_doc = models.FileField(upload_to=renommage)
-    appel_3_doc = models.FileField(upload_to=renommage)
-    appel_4_doc = models.FileField(upload_to=renommage)
-    appel_5_doc = models.FileField(upload_to=renommage)
-    reception_doc = models.FileField(upload_to=renommage)
-    plans_os_doc = models.FileField(upload_to=renommage)
+    description = models.TextField(blank=True)
+    ccmi_doc = models.FileField(upload_to=renommage, verbose_name="CCMI", blank=True)
+    appel_1_doc = models.FileField(upload_to=renommage, blank=True)
+    appel_2_doc = models.FileField(upload_to=renommage, blank=True)
+    appel_3_doc = models.FileField(upload_to=renommage, blank=True)
+    appel_4_doc = models.FileField(upload_to=renommage, blank=True)
+    appel_5_doc = models.FileField(upload_to=renommage, blank=True)
+    appel_6_doc = models.FileField(upload_to=renommage, blank=True)
+    reception_doc = models.FileField(upload_to=renommage, blank=True)
+    plans_os_doc = models.FileField(upload_to=renommage, blank=True)
 
 
     #profil = models.ForeignKey(Profil, on_delete=models.CASCADE)
@@ -29,6 +30,9 @@ class Chantier(models.Model):
 
     def __str__(self):
         return self.name
+
+    
+
 
 class Category(models.Model):
     name = models.CharField(max_length=50)

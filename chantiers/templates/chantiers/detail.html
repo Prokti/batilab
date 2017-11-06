@@ -1,19 +1,55 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="grid-example col s6 push-s3">
 {% if user.id == chantier.user.id %}
 
-<h1>Nom du chantier - {{ chantier.name }}</h1>
-<p>Adrese Chantier - {{ chantier.address }}</p>
-<p> Contrat de Construction - {{ chantier.ccmi_doc }} </p>
-<p><a href="/doc/{{ chantier.ccmi_doc }}">Contrat de Construction Maison</a></p>
-<p><a href="/doc/{{ chantier.appel_1_doc }}">Facture 1</a></p>
-<p><a href="/doc/{{ chantier.reception_doc }}">Reception</a></p>
-<p><a href="/doc/{{ chantier.appel_2_doc }}">Appel de fonds 2</a></p>
+<h3>Nom du chantier: {{ chantier.name }}</h3>
+<p>Adrese Chantier: {{ chantier.address }}</p>
 
-<h3><a href="{% url "chantier_liste" %}">RETOUR</a></h3>
+{%if chantier.ccmi_doc != "" %}
+<p><a href="/doc/{{ chantier.ccmi_doc }}">Contrat de Construction </a></p>
+{%endif%}
+{%if chantier.appel_1_doc != "" %}
+<p><a href="/doc/{{ chantier.appel_1_doc }}">Appel de fonds 1</a></p>
+{%endif%}
+{%if chantier.appel_2_doc != "" %}
+<p><a href="/doc/{{ chantier.appel_2_doc }}">Appel de fonds 2</a></p>
+{%endif%}
+{%if chantier.appel_3_doc != "" %}
+<p><a href="/doc/{{ chantier.appel_3_doc }}">Appel de fonds 3</a></p>
+{%endif%}
+{% if chantier.appel_4_doc != "" %}
+<p><a href="/doc/{{ chantier.appel_4_doc }}">Appel de fonds 4</a></p>
+{%endif%}
+{% if chantier.appel_5_doc != "" %}
+<p><a href="/doc/{{ chantier.appel_5_doc }}">Appel de fonds 5</a></p>
+{%endif%}
+{% if chantier.appel_6_doc != "" %}
+<p><a href="/doc/{{ chantier.appel_6_doc }}">Appel de fonds 6</a></p>
+{%endif%}
+{% if chantier.plans_os_doc != "" %}
+<p><a href="/doc/{{ chantier.plans_os_doc }}">Plan Ordre de Service</a></p>
+{%endif%}
+{% if chantier.reception_doc != "" %}
+<p><a href="/doc/{{ chantier.reception_doc }}">Dossier Reception</a></p>
+{%endif%}
+
+
+<a href="{% url "chantier_liste" %}">RETOUR</a> 
 
 {% else %}
 
 <h1>MAUVAISE IDENTIFICATION</h1>
 
  {% endif %}
+ {% endblock %}
+
+</div>
+
+</div>
 
 <!-- Latest compiled and minified CSS -->
